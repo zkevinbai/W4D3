@@ -1,0 +1,20 @@
+# SESSIONS
+
+<h2>Time to Sign-in</h2>
+<% if flash[:errors] %>
+  "<%= flash[:errors] %>"
+<% end %>
+
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="user_name">Username: 
+    <input type="text" name="user[user_name]">
+  </label>
+
+  <label for="password">Password: 
+    <input type="password" name="user[password]">
+  </label>
+
+  <input type="submit" value="login">
+</form>
